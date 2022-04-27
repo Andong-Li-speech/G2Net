@@ -22,7 +22,7 @@ class G2Net(nn.Module):
                  stage_num: int = 3,
                  u_type: str = "u2",
                  head_type: str = "RI+MAG",
-                 norm_type: str = "IN",
+                 norm_type: str = "IN",  # switch to cLN leads to mild performance degradation but is still Ok. BN is the worst among the listed norm options.
                  ):
         super(G2Net, self).__init__()
         self.k1 = tuple(k1)
